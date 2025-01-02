@@ -97,6 +97,7 @@
   border-radius: 20px;
   padding: 10px 40px 10px 16px;
   background-color: #FFFFFF;
+  transition: border-color .2s ease-out;
 
   &:focus {
     border-color: var(--primary-text-color)
@@ -178,6 +179,10 @@
   display: flex;
   align-items: center;
   padding: 14px 48px 14px 24px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--font-family-inter), serif;
+  border: none;
 
   &::after {
     width: 17px;

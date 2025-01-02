@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { useAppStore } from '../providers/AppProvider.tsx'
+import { roundNumber } from '../utils'
 
 interface IBasketTotal {
   id: number,
@@ -10,11 +11,11 @@ function useBasketSidebarData(totals: IBasketTotal[]) {
   const { config } = useAppStore()
 
   const subtotal = useMemo(() => {
-    return totals.reduce((acc, it) => acc + it.total, 0)
+    return roundNumber(totals.reduce((acc, it) => acc + it.total, 0), 2)
   }, [totals])
 
   const total = useMemo(() => {
-    return subtotal + config.tax + config.shipping
+    return roundNumber(subtotal + config.tax + config.shipping, 2)
   }, [subtotal])
 
   return { subtotal, total }

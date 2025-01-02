@@ -1,13 +1,13 @@
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 import { NavLink } from 'react-router'
 import { useAppStore } from '../../providers/AppProvider.tsx'
 
-interface BasketSidebarProps {
+interface OrderTotalSidebarProps {
   subtotal: number,
   total: number
 }
 
-const BasketSidebar: FC<BasketSidebarProps> = ({ subtotal, total }) => {
+const OrderTotalSidebar: FC<PropsWithChildren<OrderTotalSidebarProps>> = ({ subtotal, total, children }) => {
   const { config } = useAppStore()
 
   return (
@@ -36,14 +36,10 @@ const BasketSidebar: FC<BasketSidebarProps> = ({ subtotal, total }) => {
           </div>
         </div>
 
-        <NavLink
-          to="/checkout"
-          className="primary-green-btn basket-sidebar--link"
-          children="Continue to payment"
-        />
+        {children}
       </div>
     </aside>
   )
 }
 
-export default BasketSidebar
+export default OrderTotalSidebar

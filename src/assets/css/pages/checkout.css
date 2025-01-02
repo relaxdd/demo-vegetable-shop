@@ -1,0 +1,27 @@
+.checkout-order {
+  flex-grow: 1;
+  padding: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #DDDDDD;
+  border-radius: 6px;
+  
+  &:focus {
+    border-color: var(--primary-text-color);
+  }
+}

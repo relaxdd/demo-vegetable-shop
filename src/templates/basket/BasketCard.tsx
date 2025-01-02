@@ -46,8 +46,14 @@ const BasketCard: FC<BasketCardProps> = ({ item, quantity, changeQty, removeItem
             className="basket-card--remove"
             onClick={() => removeItem(item.id)}
           >
-            <svg width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
-              <g stroke="#000000" stroke-linecap="round" stroke-width="2">
+            <svg
+              width="800px"
+              height="800px"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+            >
+              <g stroke="#000000" strokeLinecap="round" strokeWidth="2">
                 <path d="M6 18L18 6" />
                 <path d="M18 18L6 6" />
               </g>

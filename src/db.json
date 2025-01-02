@@ -1,0 +1,80 @@
+{
+  "config": {
+    "tax": 2,
+    "shipping": 3.99
+  },
+  "products": [
+    {
+      "id": 1,
+      "title": "Heirloom tomato",
+      "price": 5.99,
+      "description": "Grown in San Juan Capistrano, CA",
+      "createdAt": "2024-12-30T01:14:00.000+04:00",
+      "inStock": true,
+      "images": {
+        "shop": "/images/shop/ed-o-neil-AvvdZlhDowA-unsplash-1.jpg",
+        "cart": "/images/basket/ed-o-neil-AvvdZlhDowA-unsplash 1.jpg"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Organic ginger",
+      "price": 12.99,
+      "description": "Grown in San Juan Capistrano, CA",
+      "createdAt": "2024-12-30T01:14:00.000+04:00",
+      "inStock": true,
+      "images": {
+        "shop": "/images/shop/noonbrew-ziCb4_EKmak-unsplash.jpg",
+        "cart": "/images/basket/noonbrew-ziCb4_EKmak-unsplash.jpg"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Sweet onion",
+      "price": 2.99,
+      "description": "Grown in San Juan Capistrano, CA",
+      "createdAt": "2024-12-30T01:14:00.000+04:00",
+      "inStock": true,
+      "images": {
+        "shop": "/images/shop/k8-0_fkPHulv-M-unsplash-1.jpg",
+        "cart": "/images/basket/k8-0_fkPHulv-M-unsplash 2.jpg"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Delicious cabbage",
+      "price": 7.99,
+      "description": "Grown in San Juan Capistrano, CA",
+      "createdAt": "2025-01-01T20:54:00.000+04:00",
+      "inStock": true,
+      "images": {
+        "shop": "/images/shop/cabbage-png-grey-bg.jpg",
+        "cart": "/images/shop/cabbage-png-grey-bg.jpg"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Farm radish",
+      "price": 1.99,
+      "description": "Grown in San Juan Capistrano, CA",
+      "createdAt": "2025-01-02T00:05:00.000+04:00",
+      "inStock": true,
+      "images": {
+        "shop": "/images/shop/radish-vegetable-picture_2.jpg",
+        "cart": "/images/shop/radish-vegetable-picture_2.jpg"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Green pea",
+      "price": 2.99,
+      "description": "Grown in San Juan Capistrano, CA",
+      "createdAt": "2025-01-02T00:20:00.000+04:00",
+      "inStock": true,
+      "images": {
+        "shop": "/images/source/pea/green-pea-image-cropped.png",
+        "cart": "/images/source/pea/green-pea-image-cropped.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "figma-basics-react",
+  "version": "0.1.0",
+  "description": "",
+  "private": true,
+  "author": "awenn2015",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --exec node --no-warnings=ExperimentalWarning --loader ts-node/esm server.ts",
+    "dev:old": "npx ts-node server.ts --transpile-only",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
+    "preview": "cross-env NODE_ENV=production node --no-warnings=ExperimentalWarning --loader ts-node/esm server.ts"
+  },
+  "dependencies": {
+    "@types/react-helmet": "^6.1.11",
+    "body-parser": "^2.0.2",
+    "compression": "^1.7.5",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.0.1",
+    "json-server": "^0.17.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^2.0.5",
+    "react-router": "^7.1.1",
+    "sanitize.css": "^13.0.0",
+    "sirv": "^3.0.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/compression": "^1.7.5",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/express": "^5.0.0",
+    "@types/json-server": "^0.14.7",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react-swc": "^3.7.2",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.6"
+  },
+  "engines": {
+    "node": ">= 22.12.0"
+  }
+}

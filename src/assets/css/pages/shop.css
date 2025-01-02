@@ -1,0 +1,122 @@
+.shop-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: -moz-available;
+  width: -webkit-available;
+}
+
+.shop-title {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 130%;
+
+  strong {
+    font-weight: 500;
+  }
+}
+
+.shop-filter {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.shop-filter--btn {
+  --bg-color: #FFFFFF;
+  --text-color: var(--primary-text-color);
+  --border-color: #C2C2C2;
+
+  border-radius: 20px;
+  background-color: var(--bg-color);
+  padding: 10px 16px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 130%;
+  text-align: center;
+  font-family: var(--font-family-inter), serif;
+  transition: all .2s ease-out;
+  color: var(--text-color);
+
+  &[data-active="1"],
+  &:hover {
+    --bg-color: var(--primary-accent-color);
+    --border-color: var(--primary-accent-color);
+    --text-color: #FFFFFF;
+  }
+}
+
+/* ======================================= */
+
+.product-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-auto-flow: dense;
+  grid-column-gap: 32px;
+  grid-row-gap: 32px;
+}
+
+.product-card--image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 395/296;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--rounded-border-radius) var(--rounded-border-radius) 0 0;
+  background-color: #EDEEF0;
+}
+
+.product-card--content {
+  padding: 24px 24px 28px;
+}
+
+.product-card--title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  margin-bottom: 4px;
+}
+
+.product-card--price {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  margin-bottom: 16px;
+  color: #426B1F;
+}
+
+.product-card--description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #6D6D6D;
+}
+
+.product-card--add-cart {
+  display: block;
+  margin-top: 24px;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 130%;
+  background-color: var(--primary-accent-color);
+  border-radius: 8px;
+  padding: 14px 24px;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  transition: background-color .2s ease-out;
+
+  &:hover,
+  &:disabled {
+    background-color: var(--primary-accent-hover-color);
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}

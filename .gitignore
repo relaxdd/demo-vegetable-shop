@@ -5,6 +5,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+pnpm-debug.log*
 .pnpm-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
@@ -81,6 +82,7 @@ web_modules/
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
+.temp
 .parcel-cache
 
 # Next.js build output
@@ -99,10 +101,6 @@ dist
 
 # vuepress build output
 .vuepress/dist
-
-# vuepress v2.x temp and cache directory
-.temp
-.cache
 
 # Docusaurus cache and generated files
 .docusaurus
@@ -128,3 +126,20 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+node_modules
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+/public/images/source/**/*.*

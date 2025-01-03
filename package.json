@@ -7,14 +7,14 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon --exec node --no-warnings=ExperimentalWarning --loader ts-node/esm server.ts",
-    "dev:old": "npx ts-node server.ts --transpile-only",
-    "build": "npm run build:client && npm run build:server",
-    "build:client": "vite build --outDir dist/client",
-    "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
-    "preview": "cross-env NODE_ENV=production node --no-warnings=ExperimentalWarning --loader ts-node/esm server.ts"
+    "build:client": "vite build --outDir dist-ssr/client",
+    "build:server": "vite build --ssr src/entry-server.tsx --outDir dist-ssr/server",
+    "build:ssr": "npm run build:client && npm run build:server",
+    "build:csr": "tsc && vite build --outDir dist-csr",
+    "preview:ssr": "cross-env NODE_ENV=production node --no-warnings=ExperimentalWarning --loader ts-node/esm server.ts",
+    "preview:csr": "vite preview --outDir dist-csr"
   },
   "dependencies": {
-    "@types/react-helmet": "^6.1.11",
     "body-parser": "^2.0.2",
     "compression": "^1.7.5",
     "cookie-parser": "^1.4.7",
@@ -35,17 +35,22 @@
     "@types/cookie-parser": "^1.4.8",
     "@types/express": "^5.0.0",
     "@types/json-server": "^0.14.7",
-    "@types/node": "^22.10.2",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@types/node": "^22.10.5",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@types/react-helmet": "^6.1.11",
     "@vitejs/plugin-react-swc": "^3.7.2",
     "cross-env": "^7.0.3",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2",
-    "vite": "^6.0.6"
+    "vite": "^6.0.7",
+    "vite-plugin-checker": "^0.8.0"
   },
   "engines": {
     "node": ">= 22.12.0"
+  },
+  "reactSnap": {
+    "source": "dist-csr"
   }
 }

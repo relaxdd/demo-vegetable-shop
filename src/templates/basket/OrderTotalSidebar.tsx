@@ -1,5 +1,4 @@
 import { FC, PropsWithChildren } from 'react'
-import { NavLink } from 'react-router'
 import { useAppStore } from '../../providers/AppProvider.tsx'
 
 interface OrderTotalSidebarProps {

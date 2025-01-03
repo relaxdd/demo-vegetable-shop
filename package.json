@@ -6,7 +6,8 @@
   "author": "awenn2015",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --exec node --no-warnings=ExperimentalWarning --loader ts-node/esm server.ts",
+    "start": "vite",
+    "start:ssr": "nodemon --exec node --no-warnings=ExperimentalWarning --loader ts-node/esm server.ts",
     "build:client": "vite build --outDir dist-ssr/client",
     "build:server": "vite build --ssr src/entry-server.tsx --outDir dist-ssr/server",
     "build:ssr": "npm run build:client && npm run build:server",

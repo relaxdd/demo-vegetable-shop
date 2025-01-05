@@ -1,13 +1,13 @@
 import '../assets/css/pages/basket.css'
 import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
-import { NavLink } from 'react-router'
+import { Link } from 'react-router'
 import useBasketSidebarData, { IBasketTotal } from '../hooks/useBasketSidebarData.ts'
 import { useAppStore } from '../providers/AppProvider.tsx'
 import useProductsById from '../hooks/useProductsById.ts'
 import BasketEmpty from '../templates/basket/BasketEmpty.tsx'
 import BasketList from '../templates/basket/BasketList.tsx'
-import OrderTotalSidebar from '../templates/basket/OrderTotalSidebar.tsx'
+import TotalSidebar from '../templates/TotalSidebar.tsx'
 import PageHeader from '../templates/PageHeader.tsx'
 import { buildBasketTotal } from '../utils'
 
@@ -44,13 +44,13 @@ const BasketPage = () => {
               <BasketList productsById={productsById} />
             </div>
 
-            <OrderTotalSidebar subtotal={subtotal} total={total}>
-              <NavLink
+            <TotalSidebar subtotal={subtotal} total={total}>
+              <Link
                 to="/checkout"
                 className="primary-green-btn basket-sidebar--link"
                 children="Continue to payment"
               />
-            </OrderTotalSidebar>
+            </TotalSidebar>
           </div>
         )
       }

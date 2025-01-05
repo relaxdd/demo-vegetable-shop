@@ -1,9 +1,9 @@
 import { FC, useRef, useState } from 'react'
-import { IProduct } from '../../@types'
+import { IProductItem } from '../../schemes/product.schema.ts'
 import { extractFileName } from '../../utils'
 
 interface BasketCardProps {
-  item: IProduct,
+  item: IProductItem,
   quantity: number,
   changeQty: (id: number, qty: number) => void,
   removeItem: (id: number) => void

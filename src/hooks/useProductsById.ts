@@ -1,9 +1,9 @@
 import { useMemo } from 'react'
-import { IProduct } from '../@types'
+import { IProductItem } from '../schemes/product.schema.ts'
 
-function useProductsById(products: IProduct[]) {
+function useProductsById(products: IProductItem[]) {
   return useMemo(() => {
-    return products.reduce<Record<number, IProduct>>((acc, product) => {
+    return products.reduce<Record<number, IProductItem>>((acc, product) => {
       acc[product.id] = product
       return acc
     }, {})

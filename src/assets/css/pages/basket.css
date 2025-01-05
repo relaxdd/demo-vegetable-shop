@@ -190,6 +190,6 @@
     content: '';
     position: absolute;
     right: 24px;
-    background-image: url('/images/Arrow-Right.svg');
+    background-image: url('./images/Arrow-Right.svg');
   }
 }

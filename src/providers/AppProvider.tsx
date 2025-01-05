@@ -1,11 +1,11 @@
 import { createContext, FC, PropsWithChildren, useContext, useEffect, useState } from 'react'
-import { ICartItem, IProduct } from '../@types'
 import { LS_BASKET_KEY } from '../defines.ts'
-import { listOfBasket } from '../schemes/basket.schema.ts'
+import { IBasketItem, listOfBasket } from '../schemes/basket.schema.ts'
+import { IProductItem } from '../schemes/product.schema.ts'
 
 interface IAppStore {
-  products: IProduct[],
-  basket: ICartItem[],
+  products: IProductItem[],
+  basket: IBasketItem[],
   config: {
     tax: number,
     shipping: number
@@ -13,8 +13,8 @@ interface IAppStore {
 }
 
 type AppPayload =
-  | { action: 'cart/add', payload: ICartItem }
-  | { action: 'cart/replace', payload: ICartItem[] }
+  | { action: 'cart/add', payload: IBasketItem }
+  | { action: 'cart/replace', payload: IBasketItem[] }
   | { action: 'cart/change', payload: { id: number, qty: number } }
   | { action: 'cart/remove', payload: number }
 

@@ -1,32 +1,36 @@
 import '../assets/css/pages/home.css'
 import { Helmet } from 'react-helmet'
-import { NavLink } from 'react-router'
+import { Link } from 'react-router'
+import { SSRPage } from '../@types/server.ts'
 
-const HomePage = () => {
+type HomePageData = { title: string }
+
+const HomePage: SSRPage<HomePageData> = ({ pageData }) => {
   return (
     <>
       <Helmet>
         <title>VegetableShop | Home page</title>
       </Helmet>
 
-      <p className="preview-text font-newsreader">
-        We’re <i>farmers</i>, <i>purveyors</i>, and <i>eaters</i> of organically grown food.
-      </p>
+      <p
+        className="preview-text font-newsreader"
+        dangerouslySetInnerHTML={{ __html: pageData?.title }}
+      />
 
-      <NavLink className="primary-green-btn shop-btn-link" to="/shop">Browse our shop</NavLink>
+      <Link className="primary-green-btn shop-btn-link" to="/shop">Browse our shop</Link>
 
       <article className="main-content">
         <figure className="main-content-block">
           <img
             width="504"
-            src="/images/jonathan-kemper-1HHrdIoLFpU-unsplash%201.jpg"
+            src="./images/jonathan-kemper-1HHrdIoLFpU-unsplash%201.jpg"
             alt="jonathan-kemper-1HHrdIoLFpU-unsplash 1" />
         </figure>
 
         <figure className="main-content-block negative-offset">
           <img
             width="780"
-            src="/images/Stocksy_txp226f62b2aNe300_Medium_4582193 1.jpg"
+            src="./images/Stocksy_txp226f62b2aNe300_Medium_4582193 1.jpg"
             alt="Stocksy_txp226f62b2aNe300_Medium_4582193 1" />
           <figcaption className="main-content-text">
             <strong>Central California</strong> — The person who grew these was located in Central California and, er,
@@ -64,4 +68,11 @@ const HomePage = () => {
   )
 }
 
+HomePage.loadData = async () => {
+  return {
+    title: 'We’re <i>farmers</i>, <i>purveyors</i>, and <i>eaters</i> of organically grown food.',
+  }
+}
+
+export type { HomePageData }
 export default HomePage

@@ -10,9 +10,6 @@ const productSchema = z.strictObject({
   inStock: z.boolean(),
 })
 
-const listOfProductsSchema = z.array(productSchema)
-
 export type IProductItem = z.infer<typeof productSchema>
-export type ListOfProductsItem = z.infer<typeof listOfProductsSchema>
 
-export { productSchema, listOfProductsSchema }
+export { productSchema }

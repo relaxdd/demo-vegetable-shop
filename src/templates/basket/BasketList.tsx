@@ -1,10 +1,10 @@
 import { FC } from 'react'
-import { IProduct } from '../../@types'
 import { useAppDispatch, useAppStore } from '../../providers/AppProvider.tsx'
+import { IProductItem } from '../../schemes/product.schema.ts'
 import BasketCard from './BasketCard.tsx'
 
 interface BasketListProps {
-  productsById: Record<number, IProduct>
+  productsById: Record<number, IProductItem>
 }
 
 const BasketList: FC<BasketListProps> = ({ productsById }) => {

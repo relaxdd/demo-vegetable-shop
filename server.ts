@@ -12,7 +12,7 @@ const expose = process.env.EXPOSE || false
 
 // Cached production assets
 const templateHtml = isProd
-  ? await fs.readFile('./dist/client/index.html', 'utf-8')
+  ? await fs.readFile('./dist-ssr/client/index.html', 'utf-8')
   : ''
 
 // Create http server
@@ -33,7 +33,7 @@ if (!isProd) {
   const compression = (await import('compression')).default
   const sirv = (await import('sirv')).default
   app.use(compression())
-  app.use(base, sirv('./dist/client', { extensions: [] }))
+  app.use(base, sirv('./dist-ssr/client', { extensions: [] }))
 }
 
 // Provide API
@@ -59,7 +59,7 @@ app.get('*all', async (req, res) => {
       render = (await vite!.ssrLoadModule('/src/entry-server.tsx')).render
     } else {
       template = templateHtml
-      render = (await import('./dist/server/entry-server.js' as any)).render
+      render = (await import('./dist-ssr/server/entry-server.js' as any)).render
     }
 
     const rendered = await render(req)

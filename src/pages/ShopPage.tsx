@@ -1,20 +1,24 @@
 import '../assets/css/pages/shop.css'
 import { useMemo, useState } from 'react'
 import { Helmet } from 'react-helmet'
-import { ICartItem } from '../@types'
+import { SSRPage } from '../@types/server.ts'
 import { useAppDispatch, useAppStore } from '../providers/AppProvider.tsx'
 import useBasketById from '../hooks/useBasketById.ts'
+import { IBasketItem } from '../schemes/basket.schema.ts'
+import { IProductItem } from '../schemes/product.schema.ts'
 import ProductCard from '../templates/ProductCard.tsx'
 import ShopHeader from '../templates/shop/ShopHeader.tsx'
 
-const ShopPage = () => {
+type ShopPageData = { products: IProductItem[] }
 
-  const { products, basket } = useAppStore()
+const ShopPage: SSRPage<ShopPageData> = ({ pageData }) => {
+  const [products, _] = useState(pageData?.products || [])
+  const { basket } = useAppStore()
   const dispatch = useAppDispatch()
   const [filter, setFilter] = useState('Default')
 
   function addToBasket(id: number) {
-    const payload: ICartItem = {
+    const payload: IBasketItem = {
       productId: id,
       quantity: 1,
     }
@@ -65,4 +69,12 @@ const ShopPage = () => {
   )
 }
 
+ShopPage.loadData = async () => {
+  const resp = await fetch('http://localhost:5173/api/db/products')
+  const products = await resp.json()
+
+  return { products }
+}
+
+export type { ShopPageData }
 export default ShopPage

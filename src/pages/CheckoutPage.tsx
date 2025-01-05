@@ -6,7 +6,7 @@ import { Navigate } from 'react-router'
 import useBasketSidebarData from '../hooks/useBasketSidebarData.ts'
 import useProductsById from '../hooks/useProductsById.ts'
 import { useAppStore } from '../providers/AppProvider.tsx'
-import OrderTotalSidebar from '../templates/basket/OrderTotalSidebar.tsx'
+import TotalSidebar from '../templates/TotalSidebar.tsx'
 import PageHeader from '../templates/PageHeader.tsx'
 import { buildBasketTotal } from '../utils'
 
@@ -80,14 +80,14 @@ const CheckoutPage = () => {
           </form>
         </div>
 
-        <OrderTotalSidebar subtotal={subtotal} total={total}>
+        <TotalSidebar subtotal={subtotal} total={total}>
           <input
             type="submit"
             value="Place an order"
             className="primary-green-btn basket-sidebar--link"
             form="placeAnOrderForm"
           />
-        </OrderTotalSidebar>
+        </TotalSidebar>
       </div>
     </>
   )

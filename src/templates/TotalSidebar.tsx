@@ -1,12 +1,12 @@
 import { FC, PropsWithChildren } from 'react'
-import { useAppStore } from '../../providers/AppProvider.tsx'
+import { useAppStore } from '../providers/AppProvider.tsx'
 
 interface OrderTotalSidebarProps {
   subtotal: number,
   total: number
 }
 
-const OrderTotalSidebar: FC<PropsWithChildren<OrderTotalSidebarProps>> = ({ subtotal, total, children }) => {
+const TotalSidebar: FC<PropsWithChildren<OrderTotalSidebarProps>> = ({ subtotal, total, children }) => {
   const { config } = useAppStore()
 
   return (
@@ -41,4 +41,4 @@ const OrderTotalSidebar: FC<PropsWithChildren<OrderTotalSidebarProps>> = ({ subt
   )
 }
 
-export default OrderTotalSidebar
+export default TotalSidebar

@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
-import { ICartItem } from '../@types'
+import { IBasketItem } from '../schemes/basket.schema.ts'
 
-function useBasketById(basket: ICartItem[]) {
+function useBasketById(basket: IBasketItem[]) {
   return useMemo(() => {
     return basket.reduce<Record<number, number>>((acc, it) => {
       acc[it.productId] = it.quantity

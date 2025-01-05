@@ -1,9 +1,9 @@
 import { FC } from 'react'
-import { IProduct } from '../@types'
+import { IProductItem } from '../schemes/product.schema.ts'
 import { extractFileName } from '../utils'
 
 interface ProductProps {
-  item: IProduct,
+  item: IProductItem,
   isInBasket: boolean,
   addToBasket: (id: number) => void,
 }

@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router'
+import { Link } from 'react-router'
 import { useAppStore } from '../providers/AppProvider.tsx'
 
 const Header = () => {
@@ -15,14 +15,14 @@ const Header = () => {
           <div className="header-right">
             <nav className="header-nav">
               <ul>
-                <li><NavLink to="/">Home</NavLink></li>
-                <li><NavLink to="/shop">Shop</NavLink></li>
-                <li><NavLink to="#">Who we are</NavLink></li>
-                <li><NavLink to="#">My profile</NavLink></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/shop">Shop</Link></li>
+                <li><Link to="/todos">My todos</Link></li>
+                <li><Link to="#">My profile</Link></li>
               </ul>
             </nav>
 
-            <NavLink
+            <Link
               to="/basket"
               className="primary-accent-btn"
               children={`Basket (${basket.length})`}
